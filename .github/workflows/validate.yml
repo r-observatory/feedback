@@ -14,6 +14,7 @@ jobs:
       - name: Forms parse, and every label they apply exists in labels.yml
         run: |
           set -euo pipefail
+          shopt -s nullglob
           known=$(yq -o=json '.' .github/labels.yml | jq -r '.[].name' | sort -u)
           fail=0
           for f in .github/ISSUE_TEMPLATE/[0-9]*.yml; do
