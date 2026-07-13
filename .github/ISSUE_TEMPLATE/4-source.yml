@@ -1,0 +1,45 @@
+name: New data source
+description: "Propose a new download mirror or registry for R Observatory to track."
+title: "[SOURCE] "
+labels: ["t:data-source", "s:needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        R Observatory already tracks CRAN, Bioconductor, r2u, conda-forge, bioconda, Fedora COPR, c2d4u, and openSUSE OBS. Tell us about one we are missing.
+  - type: input
+    id: name
+    attributes:
+      label: Source name
+      placeholder: "e.g. Posit Public Package Manager"
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Homepage or documentation URL
+    validations:
+      required: true
+  - type: dropdown
+    id: covers
+    attributes:
+      label: What does it cover?
+      options:
+        - CRAN packages
+        - Bioconductor packages
+        - Both
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: What data is available, and why is it worth tracking?
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Anything you know about an API, logs, or how far back the history goes
+    validations:
+      required: false

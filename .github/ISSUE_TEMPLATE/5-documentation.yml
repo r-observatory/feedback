@@ -1,0 +1,25 @@
+name: Documentation issue
+description: "Something in the site or the repo READMEs is wrong, missing, or confusing."
+title: "[DOCS] "
+labels: ["t:documentation", "s:needs-triage"]
+body:
+  - type: input
+    id: where
+    attributes:
+      label: Where is the problem?
+      description: A link to the page or section.
+    validations:
+      required: false
+  - type: textarea
+    id: issue
+    attributes:
+      label: What is wrong, missing, or confusing?
+    validations:
+      required: true
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggested fix
+      description: If you have an idea.
+    validations:
+      required: false

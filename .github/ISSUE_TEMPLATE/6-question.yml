@@ -1,0 +1,22 @@
+name: Question
+description: "Ask how to read a metric, how to get the raw data, or anything else."
+title: "[QUESTION] "
+labels: ["t:question", "s:needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Two places worth checking first: [R Observatory](https://r-observatory.thecoatlessprofessor.com/) itself, and [r-observatory/data](https://github.com/r-observatory/data), which publishes the database behind the site if your question is about the underlying numbers.
+  - type: textarea
+    id: question
+    attributes:
+      label: Your question
+      description: What are you trying to do?
+    validations:
+      required: true
+  - type: textarea
+    id: tried
+    attributes:
+      label: What have you tried?
+    validations:
+      required: false

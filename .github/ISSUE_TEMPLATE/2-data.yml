@@ -1,0 +1,85 @@
+name: Data issue
+description: "A number, a package, or a date on the site looks wrong, missing, or out of date."
+title: "[DATA] "
+labels: ["t:data-issue", "s:needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The site works but the data looks wrong. If the page itself is broken, use the [bug form](https://github.com/r-observatory/feedback/issues/new?template=1-bug.yml) instead.
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What kind of data looks wrong?
+      options:
+        - Download counts
+        - Package metadata (title, authors, version, dependencies)
+        - Code and quality metrics
+        - Test coverage
+        - Datasets shipped inside packages
+        - Archived or removed packages
+        - CRAN incoming queue
+        - Package change feed (new, updated, archived)
+        - Repository activity (GitHub stars, forks, issues)
+        - Raw data or database downloads
+        - The data is stale or has stopped updating
+        - Not sure
+    validations:
+      required: true
+  - type: input
+    id: package
+    attributes:
+      label: Package name
+      placeholder: "ggplot2"
+    validations:
+      required: false
+  - type: input
+    id: url
+    attributes:
+      label: Where did you see it?
+      description: The page URL.
+      placeholder: "https://r-observatory.thecoatlessprofessor.com/packages/ggplot2/"
+    validations:
+      required: true
+  - type: dropdown
+    id: source
+    attributes:
+      label: Which download source, if this is about download counts?
+      description: Skip this if your report is not about downloads.
+      options:
+        - CRAN (the cranlogs numbers, from the Posit mirror logs)
+        - Bioconductor
+        - r2u (CRAN as Ubuntu binaries)
+        - conda-forge
+        - bioconda
+        - Fedora COPR
+        - c2d4u (Ubuntu PPA)
+        - openSUSE OBS (autoCRAN)
+        - Not sure, or more than one
+    validations:
+      required: false
+  - type: textarea
+    id: shows
+    attributes:
+      label: What does the site show?
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect to see?
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: How do you know?
+      description: A link to CRAN, Bioconductor, or wherever you saw the right number helps a lot. File this even if all you have is a hunch that the number looks off.
+    validations:
+      required: false
+  - type: textarea
+    id: context
+    attributes:
+      label: Anything else
+    validations:
+      required: false

@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: R Observatory
+    url: https://r-observatory.thecoatlessprofessor.com/
+    about: The site itself.
+  - name: Email support
+    url: mailto:support@caffeinatedmath.com
+    about: For private support requests and security reports.
